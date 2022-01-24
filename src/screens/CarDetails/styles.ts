@@ -8,12 +8,10 @@ export const Container = styled.View`
 `;
 
 export const Header = styled.View`
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   position: absolute;
-  margin-top: ${getStatusBarHeight() + 18}px;
-  margin-left: 24px;
+  left: 24px;
+  top: ${getStatusBarHeight() + 18}px;
+  z-index: 999;
 `;
 
 export const CarImages = styled.View`

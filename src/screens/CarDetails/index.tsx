@@ -31,7 +31,7 @@ export function CarDetails(){
 
       <S.CarImages>
         <ImageSlider 
-          imagesUrl={[car.thumbnail]}
+          imagesUrl={car.photos}
         />
       </S.CarImages>
 

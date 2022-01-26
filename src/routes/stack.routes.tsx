@@ -17,32 +17,33 @@ export function StackRoutes() {
       screenOptions={{
         headerShown: false,
       }}
+      initialRouteName='Splash'
     >
-      <Screen 
+      <Screen
         name="Splash"
         component={Splash}
       />
-      <Screen 
+      <Screen
         name="Home"
         component={Home}
       />
-      <Screen 
+      <Screen
         name="CarDetails"
         component={CarDetails}
       />
-      <Screen 
+      <Screen
         name="Scheduling"
         component={Scheduling}
       />
-      <Screen 
+      <Screen
         name="SchedulingDetails"
         component={SchedulingDetails}
       />
-      <Screen 
+      <Screen
         name="SchedulingComplete"
         component={SchedulingComplete}
       />
-      <Screen 
+      <Screen
         name="MyCars"
         component={MyCars}
       />

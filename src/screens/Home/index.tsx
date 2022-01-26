@@ -14,7 +14,7 @@ import { Load } from '../../components/Load';
 
 import * as S from './styles';
 
-export function Home(){
+export function Home() {
   const theme = useTheme();
   const navigation = useNavigation();
   const [cars, setCars] = useState<CarDTO[]>([]);
@@ -23,7 +23,9 @@ export function Home(){
   useEffect(() => {
     async function fetchCars() {
       try {
+        console.log('entrou')
         const { data } = await api.get<CarDTO[]>('/cars');
+        console.log('entrou')
         setCars(data);
       } catch (error) {
         console.log(error);
@@ -44,7 +46,7 @@ export function Home(){
 
   return (
     <S.Container>
-      <StatusBar 
+      <StatusBar
         barStyle='light-content'
         backgroundColor="transparent"
         translucent
@@ -52,24 +54,24 @@ export function Home(){
 
       <S.Header>
         <S.HeaderContent>
-          <Logo 
+          <Logo
             width={RFValue(108)}
             height={RFValue(12)}
-            />
+          />
           <S.TotalCars>
             Total de {cars.length} carros
           </S.TotalCars>
         </S.HeaderContent>
       </S.Header>
 
-      {isLoading ? 
+      {isLoading ?
         <Load /> :
         <S.CarList
           data={cars}
-          keyExtractor={item  => item.id}
-          renderItem={({ item }) => 
-            <CarCard 
-              data={item} 
+          keyExtractor={item => item.id}
+          renderItem={({ item }) =>
+            <CarCard
+              data={item}
               onPress={() => handleCarDetails(item)}
             />
           }
@@ -78,7 +80,7 @@ export function Home(){
 
       <S.MyCarsButtonWrapper>
         <S.MyCarsButton onPress={handleOpenMyCars}>
-          <Ionicons 
+          <Ionicons
             name="ios-car-sport"
             color={theme.colors.shape}
             size={32}
